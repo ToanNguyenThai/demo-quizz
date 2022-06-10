@@ -10,7 +10,11 @@ const rootReducer = (state = initState, action) => {
                 ...state,
                 question: [...state.question, action.payload]
             }
-
+        case 'clear':
+            return {
+                ...state,
+                question: action.payload
+            }
         default:
             return state
     }

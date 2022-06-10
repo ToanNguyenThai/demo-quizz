@@ -5,8 +5,9 @@ import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import { actionClear } from '../redux/actions'
 
 const style = {
     Box: {
@@ -33,6 +34,8 @@ const style = {
 export default function Result() {
     const [correctAnswer, setCorrectAnswer] = useState(0)
     const result = useSelector((state) => state.question)
+    let navigate = useNavigate();
+    const dispatch = useDispatch()
     const check = (answer, yourAnswer) => {
         if (answer === yourAnswer)
             return true
@@ -51,6 +54,10 @@ export default function Result() {
         setCorrectAnswer(number)
 
     }, [])
+    const handleClick = () => {
+        dispatch(actionClear([]))
+        navigate('/');
+    }
     console.log(result);
     return (
         <Box sx={style.Box}>
@@ -86,10 +93,9 @@ export default function Result() {
                     <Typography variant='h5' color='primary'>
                         Your Result: {correctAnswer} / {result.length}
                     </Typography>
-                    <Link to='/' style={{ textDecoration: 'none' }}>
-                        <Button variant="contained">Back to home
-                        </Button>
-                    </Link>
+
+                    <Button variant="contained" onClick={() => handleClick()}>Back to home</Button>
+
 
                 </Box>
 

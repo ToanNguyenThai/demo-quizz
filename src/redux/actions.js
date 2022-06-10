@@ -10,3 +10,10 @@ export const actionAddAnswer = (data) => {
         payload: data
     }
 }
+
+export const actionClear = (data) => {
+    return {
+        type: 'clear',
+        payload: data
+    }
+}
