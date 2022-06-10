@@ -14,6 +14,7 @@ const style = {
         height: '100%',
         backgroundColor: '#e7ebf0',
         padding: ' 20px 0px'
+
     },
     card: {
         padding: '5px 0px',

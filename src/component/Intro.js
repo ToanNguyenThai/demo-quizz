@@ -28,7 +28,9 @@ const style = {
         height: '100vh',
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: '#e7ebf0'
+        backgroundImage: `url('https://i.picsum.photos/id/1041/5184/2916.jpg?hmac=TW_9o6HeD7H7I7NVo-S1Fa1iAvzQ10uvmJqsXvNoi0M')`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
     }
 }
 export default function Intro() {
